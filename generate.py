@@ -15,7 +15,7 @@ pixel = '<!-- Top.Mail.Ru counter -->\n<script type="text/javascript">\nvar _tmr
 def product_event(product_id, value):
  event = {"type": "reachGoal", "id": "3812937", "value": str(value), "goal": "viewProduct", "params": {"product_id": product_id}}
  return '<script>\n_tmr.push(' + json.dumps(event) + ');\n</script>'
-def page(title,body,product_id=None,value=None):return f'''<!doctype html><html lang="ru"><head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} — Флагман</title><meta name="description" content="Статическая тестовая витрина флагманских смартфонов"><link rel="stylesheet" href="style.css"><script src="shopping.js" defer></script></head><body>
+def page(title,body,product_id=None,value=None):return f'''<!doctype html><html lang="ru"><head><meta name="robots" content="index, follow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} — Флагман</title><meta name="description" content="Статическая тестовая витрина флагманских смартфонов"><link rel="stylesheet" href="style.css"><script src="shopping.js" defer></script></head><body>
 <script src="user-id.js"></script>
 {pixel}
 {header}<main>{body}</main>{footer}{product_event(product_id,value) if product_id else ""}</body></html>'''

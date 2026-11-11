@@ -12,7 +12,7 @@
   document.querySelector('header').append(totals);
   const persist = () => { try { localStorage.setItem(key, JSON.stringify(state)); } catch (_) {} };
   const track = (goal, product) => {
-    (window._tmr || (window._tmr = [])).push({type: 'reachGoal', id: '3812937', value: product.dataset.productPrice, goal, params: {product_id: product.dataset.productId}});
+    (window._tmr || (window._tmr = [])).push({type: 'reachGoal', id: '3813741', value: product.dataset.productPrice, goal, params: {product_id: product.dataset.productId}});
   };
   const render = () => {
     totals.textContent = `Избранное: ${state.wishlist.length} · Корзина: ${Object.values(state.cart).reduce((sum, n) => sum + (Number(n) || 0), 0)}`;
